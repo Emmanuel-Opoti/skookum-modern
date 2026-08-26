@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/components/AppImage";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FacebookIcon, InstagramIcon, TwitterIcon } from "./SocialIcons";
 import { navLinks, site } from "@/lib/site";

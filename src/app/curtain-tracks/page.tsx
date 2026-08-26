@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "Curtain Tracks & Rods in Nairobi",
   description:
     "Ordinary, ripple, bendable, and corded curtain tracks plus decorative curtain rods, made to measure in Nairobi, Kenya.",
+  alternates: { canonical: "/curtain-tracks" },
+  openGraph: {
+    title: "Curtain Tracks & Rods in Nairobi | Skookum Investments Ltd",
+    description:
+      "Made-to-measure curtain tracks and rods in Nairobi, Kenya — ordinary, ripple, bendable, and corded systems.",
+    url: "/curtain-tracks",
+    images: ["/images/page-heroes/curtain-tracks.jpg"],
+  },
 };
 
 const options: ProductItem[] = [

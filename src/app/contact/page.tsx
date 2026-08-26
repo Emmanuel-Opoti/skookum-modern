@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "Contact Us",
   description:
     "Contact Skookum Investments Ltd for expert window blinds, curtain tracks, window films, and interior design solutions in Nairobi, Kenya.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Us | Skookum Investments Ltd",
+    description:
+      "Contact Skookum Investments Ltd for a free site visit and quote in Nairobi, Kenya.",
+    url: "/contact",
+    images: ["/images/page-heroes/contact.jpg"],
+  },
 };
 
 export default function ContactPage() {

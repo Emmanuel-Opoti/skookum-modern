@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Fraunces, Work_Sans } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const workSans = Work_Sans({
+  variable: "--font-worksans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  axes: ["opsz", "SOFT", "WONK"],
   display: "swap",
 });
 
@@ -33,6 +35,8 @@ export const metadata: Metadata = {
     "Window Films Nairobi",
     "Skookum Investments",
   ],
+  authors: [{ name: "Skookum Investments Ltd" }],
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Skookum Investments Ltd | Window Blinds, Films & Curtain Tracks in Nairobi",
     description:
@@ -41,6 +45,18 @@ export const metadata: Metadata = {
     siteName: "Skookum Investments Ltd",
     images: ["/images/logo.jpg"],
     type: "website",
+    locale: "en_KE",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Skookum Investments Ltd | Window Blinds, Films & Curtain Tracks in Nairobi",
+    description:
+      "Premium window treatment solutions in Nairobi, Kenya — blinds, curtain tracks, and window films.",
+    images: ["/images/logo.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -49,9 +65,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${workSans.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-ink text-white">
+        <StructuredData />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

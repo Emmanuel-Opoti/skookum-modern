@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   title: "Window Blinds in Nairobi",
   description:
     "Explore custom window blinds in Nairobi — Zebra, Venetian, Vertical, Roller, Sunscreen, and Blackout blinds for homes and offices.",
+  alternates: { canonical: "/window-blinds" },
+  openGraph: {
+    title: "Window Blinds in Nairobi | Skookum Investments Ltd",
+    description:
+      "Custom-made blinds in Nairobi — Zebra, Roller, Venetian, and more. Enhance your space with Skookum's stylish window treatments.",
+    url: "/window-blinds",
+    images: ["/images/page-heroes/window-blinds.jpg"],
+  },
 };
 
 const features = [

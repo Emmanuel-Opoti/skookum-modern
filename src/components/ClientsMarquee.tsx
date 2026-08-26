@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/AppImage";
 
 const clients = [
   { src: "/images/clients/dtb.png", alt: "Diamond Trust Bank" },

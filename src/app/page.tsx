@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/AppImage";
 import Link from "next/link";
 import { CalendarCheck, ClipboardList, Hammer, PenTool, ArrowRight } from "lucide-react";
 import HomeHero from "@/components/HomeHero";
