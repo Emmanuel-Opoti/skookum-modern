@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
-// When built inside GitHub Actions for a GitHub Pages project site, assets
-// must be served from /<repo-name>/ instead of the domain root.
-const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-const basePath = isGithubActions && repoName ? `/${repoName}` : "";
+// Set by the GitHub Pages workflow (see .github/workflows/deploy.yml) so the
+// same value is available at build time (here) and inlined into the client
+// bundle (via src/lib/basePath.ts) — plain GITHUB_* env vars are only
+// visible server-side, which caused client-rendered image preloads to miss
+// the prefix even though the server-rendered HTML had it right.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   output: "export",
