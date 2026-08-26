@@ -1,69 +1,244 @@
 import Image from "next/image";
+import Link from "next/link";
+import { CalendarCheck, ClipboardList, Hammer, PenTool, ArrowRight } from "lucide-react";
+import HomeHero from "@/components/HomeHero";
+import Reveal from "@/components/Reveal";
+import ServiceCard from "@/components/ServiceCard";
+import ClientsMarquee from "@/components/ClientsMarquee";
+import { site } from "@/lib/site";
+import { basePath } from "@/lib/basePath";
+
+const services = [
+  {
+    href: "/window-blinds",
+    image: "/images/services/window-blinds.jpg",
+    title: "Window Blinds",
+    description: "Zebra, Venetian, Vertical, Roller, Sunscreen & Blackout blinds.",
+  },
+  {
+    href: "/window-films",
+    image: "/images/services/window-films.jpg",
+    title: "Window Films",
+    description: "Decorative, solar control, security, and automotive films.",
+  },
+  {
+    href: "/specialized-treatments",
+    image: "/images/services/specialized.jpg",
+    title: "Specialized Solutions",
+    description: "Dream, skylight, outdoor, panel, roman & honeycomb blinds.",
+  },
+  {
+    href: "/curtain-tracks",
+    image: "/images/services/curtain-tracks.jpg",
+    title: "Curtain Tracks",
+    description: "Ordinary, ripple, bendable & corded tracks, plus curtain rods.",
+  },
+];
+
+const gallery = [
+  { src: "/images/gallery/automotive-tint.jpg", title: "Automotive Film" },
+  { src: "/images/gallery/roller-blinds.jpg", title: "Roller Blinds" },
+  { src: "/images/gallery/zebra-blinds.jpg", title: "Zebra Blinds" },
+  { src: "/images/gallery/wooden-blinds.jpg", title: "Wooden Venetian Blinds" },
+  { src: "/images/gallery/solar-blinds.jpg", title: "Solar Control Blinds" },
+  { src: "/images/gallery/roman-blinds.jpg", title: "Roman Blinds" },
+];
+
+const steps = [
+  {
+    icon: CalendarCheck,
+    title: "Book a Site Visit",
+    description:
+      "We arrange a convenient time for one of our design consultants to come and discuss your needs.",
+  },
+  {
+    icon: PenTool,
+    title: "Get a Free Quote",
+    description:
+      "Once we understand your needs and take measurements, we share a detailed, no-obligation quote.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Place Your Order",
+    description: "Approve the quote and we schedule your made-to-measure order for production.",
+  },
+  {
+    icon: Hammer,
+    title: "Professional Installation",
+    description: "Our technicians install your window treatments cleanly, quickly, and precisely.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <HomeHero />
+
+      {/* Who We Are */}
+      <section className="mx-auto max-w-4xl px-6 py-24 text-center md:px-8">
+        <Reveal>
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-gold">
+            Who We Are
           </p>
+          <h2 className="mt-4 font-display text-3xl text-white text-balance sm:text-4xl">
+            Nairobi&rsquo;s trusted name in bespoke window treatments since 2015
+          </h2>
+          <p className="mt-6 text-white/70 leading-relaxed">
+            Skookum Investments Limited provides high-quality and affordable window
+            treatment solutions across Nairobi and Kenya for both commercial and
+            residential clients. From custom window blinds and decorative window
+            films to modern motorized curtain tracks, we offer bespoke interior
+            design solutions tailored to suit your specific taste and privacy needs.
+          </p>
+        </Reveal>
+      </section>
+
+      {/* Services */}
+      <section className="mx-auto max-w-7xl px-6 pb-24 md:px-8">
+        <Reveal className="mb-12 text-center">
+          <h2 className="font-display text-3xl text-white sm:text-4xl">
+            Our Products &amp; Services
+          </h2>
+          <div className="mx-auto mt-4 h-px w-16 bg-gold" />
+        </Reveal>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((s, i) => (
+            <ServiceCard key={s.href} {...s} delay={i * 0.08} />
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Gallery */}
+      <section className="bg-black py-24">
+        <div className="mx-auto max-w-7xl px-6 md:px-8">
+          <Reveal className="mb-12 text-center">
+            <p className="text-xs font-medium uppercase tracking-[0.35em] text-gold">
+              Our Work
+            </p>
+            <h2 className="mt-4 font-display text-3xl text-white sm:text-4xl">Gallery</h2>
+          </Reveal>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((g, i) => (
+              <Reveal key={g.src} delay={i * 0.06}>
+                <div className="group relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-white/10">
+                  <Image
+                    src={g.src}
+                    alt={g.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent" />
+                  <p className="absolute bottom-4 left-4 font-display text-sm text-white">
+                    {g.title}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Video */}
+      <section className="mx-auto grid max-w-7xl gap-10 px-6 py-24 md:px-8 lg:grid-cols-2 lg:items-center">
+        <Reveal>
+          <div className="overflow-hidden rounded-2xl ring-1 ring-white/10">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={`${basePath}/video/cover.jpg`}
+              className="aspect-video w-full object-cover"
+            >
+              <source src={`${basePath}/video/motorized-curtain.mp4`} type="video/mp4" />
+            </video>
+          </div>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-gold">
+            In Motion
+          </p>
+          <h2 className="mt-4 font-display text-3xl text-white sm:text-4xl">
+            Our Motorized Curtain Tracks in Action
+          </h2>
+          <p className="mt-5 text-white/70 leading-relaxed">
+            Watch our motorized curtain tracks in action, effortlessly and quietly
+            opening and closing at the touch of a button.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
+          >
+            Contact Us for a Free Quote <ArrowRight size={16} />
+          </Link>
+        </Reveal>
+      </section>
+
+      {/* Clients */}
+      <section className="border-y border-white/10 bg-black py-16">
+        <Reveal className="mb-8 text-center">
+          <h2 className="font-display text-2xl text-white">Our Esteemed Clients</h2>
+        </Reveal>
+        <ClientsMarquee />
+      </section>
+
+      {/* How it Works */}
+      <section className="mx-auto max-w-7xl px-6 py-24 md:px-8">
+        <Reveal className="mb-14 text-center">
+          <p className="text-xs font-medium uppercase tracking-[0.35em] text-gold">
+            Our Process
+          </p>
+          <h2 className="mt-4 font-display text-3xl text-white sm:text-4xl">How It Works</h2>
+        </Reveal>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, i) => (
+            <Reveal key={step.title} delay={i * 0.1}>
+              <div className="relative rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+                <span className="font-display text-4xl text-gold/25">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="mt-3 flex h-12 w-12 items-center justify-center rounded-full bg-gold/10 text-gold">
+                  <step.icon size={22} />
+                </div>
+                <h3 className="mt-5 font-display text-lg text-white">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                  {step.description}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="relative overflow-hidden bg-black py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(208,173,85,0.12),transparent_60%)]" />
+        <div className="relative mx-auto max-w-3xl px-6 text-center md:px-8">
+          <Reveal>
+            <h2 className="font-display text-3xl text-white sm:text-4xl">
+              Ready to transform your space?
+            </h2>
+            <p className="mt-4 text-white/70">
+              Book a free site visit and let our design consultants help you find
+              the perfect window treatment for your home or office.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/contact"
+                className="rounded-full bg-gold px-8 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
+              >
+                Contact Us
+              </Link>
+              <a
+                href={site.phoneHref}
+                className="rounded-full border border-white/30 px-8 py-3.5 text-sm font-medium text-white transition-colors hover:border-gold hover:text-gold"
+              >
+                Call {site.phone}
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
   );
 }
