@@ -5,6 +5,8 @@ import HomeHero from "@/components/HomeHero";
 import Reveal from "@/components/Reveal";
 import ServiceCard from "@/components/ServiceCard";
 import ClientsMarquee from "@/components/ClientsMarquee";
+import TrustBar from "@/components/TrustBar";
+import AudienceSplit from "@/components/AudienceSplit";
 import { site } from "@/lib/site";
 import { basePath } from "@/lib/basePath";
 
@@ -74,9 +76,21 @@ export default function Home() {
     <>
       <HomeHero />
 
+      <TrustBar />
+
       {/* Who We Are */}
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center md:px-8">
+      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:px-8 lg:grid-cols-2 lg:items-center lg:gap-16">
         <Reveal>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-white/10">
+            <Image
+              src="/images/about-installation.jpg"
+              alt="Skookum technician measuring a window for a made-to-measure fit"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </Reveal>
+        <Reveal delay={0.1}>
           <p className="text-xs font-medium uppercase tracking-[0.35em] text-gold">
             Who We Are
           </p>
@@ -90,6 +104,12 @@ export default function Home() {
             films to modern motorized curtain tracks, we offer bespoke interior
             design solutions tailored to suit your specific taste and privacy needs.
           </p>
+          <Link
+            href="/contact"
+            className="mt-7 inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-medium text-ink transition-colors hover:bg-gold-light"
+          >
+            Book a Free Site Visit <ArrowRight size={16} />
+          </Link>
         </Reveal>
       </section>
 
@@ -107,6 +127,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <AudienceSplit />
 
       {/* Gallery */}
       <section className="bg-black py-24">
