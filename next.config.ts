@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
   },
   basePath,
   assetPrefix: basePath,
+  // Emits /route/index.html instead of /route.html so plain Apache
+  // hosting (cPanel) serves clean URLs via its normal directory-index
+  // behavior, with no custom rewrite rules needed.
+  trailingSlash: true,
 };
 
 export default nextConfig;

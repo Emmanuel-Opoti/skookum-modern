@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: "Window Films in Nairobi",
   description:
     "Decorative, solar control, security, and automotive window films for residential, commercial, and vehicle applications in Nairobi.",
-  alternates: { canonical: "/window-films" },
+  alternates: { canonical: "/window-films/" },
   openGraph: {
     title: "Window Films in Nairobi | Skookum Investments Ltd",
     description:
       "Decorative, solar control, security, and automotive window films in Nairobi, Kenya.",
-    url: "/window-films",
+    url: "/window-films/",
     images: ["/images/page-heroes/window-films.jpg"],
   },
 };

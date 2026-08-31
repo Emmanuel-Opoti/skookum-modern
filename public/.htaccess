@@ -1,0 +1,15 @@
+# Security hardening: block hidden files/folders and sensitive file types
+RewriteEngine On
+RewriteRule ^(.*/)?\.git/ - [F,L,NC]
+
+<FilesMatch "^\.">
+Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(env|sql|log|ini|bak|config)$">
+Require all denied
+</FilesMatch>
+
+Options -Indexes
+
+ErrorDocument 404 /404.html

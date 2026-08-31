@@ -15,7 +15,9 @@ export default function AppLink({
   children,
   ...rest
 }: AnchorHTMLAttributes<HTMLAnchorElement> & { href: string; children?: ReactNode }) {
-  const resolvedHref = href.startsWith("/") ? `${basePath}${href}` : href;
+  const isInternal = href.startsWith("/");
+  const path = isInternal && !href.endsWith("/") ? `${href}/` : href;
+  const resolvedHref = isInternal ? `${basePath}${path}` : href;
 
   return (
     <a href={resolvedHref} {...rest}>

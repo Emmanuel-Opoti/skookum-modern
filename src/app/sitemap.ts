@@ -5,12 +5,12 @@ export const dynamic = "force-static";
 const baseUrl = "https://skookuminteriorcompany.co.ke";
 
 const routes = [
-  "",
-  "/window-blinds",
-  "/window-films",
-  "/curtain-tracks",
-  "/specialized-treatments",
-  "/contact",
+  "/",
+  "/window-blinds/",
+  "/window-films/",
+  "/curtain-tracks/",
+  "/specialized-treatments/",
+  "/contact/",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

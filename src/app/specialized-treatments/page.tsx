@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Specialized Window Treatments in Nairobi",
   description:
     "Custom window solutions including Dream Blinds, Skylight Blinds, Outdoor Blinds, Panel Blinds, Roman Blinds, and Honeycomb Blinds in Nairobi, Kenya.",
-  alternates: { canonical: "/specialized-treatments" },
+  alternates: { canonical: "/specialized-treatments/" },
   openGraph: {
     title: "Specialized Window Treatments in Nairobi | Skookum Investments Ltd",
     description:
       "Custom window solutions in Nairobi, Kenya — Dream, Skylight, Outdoor, Panel, Roman, and Honeycomb blinds.",
-    url: "/specialized-treatments",
+    url: "/specialized-treatments/",
     images: ["/images/page-heroes/specialized.jpg"],
   },
 };
