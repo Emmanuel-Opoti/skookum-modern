@@ -61,7 +61,7 @@ export default function HomeHero() {
       </AnimatePresence>
 
       <div className="relative z-10 flex h-full items-center px-6 md:px-12">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -70,13 +70,13 @@ export default function HomeHero() {
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.35em] text-gold">
+              <p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-gold">
                 Nairobi &middot; Since 2015
               </p>
-              <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl md:text-6xl">
+              <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl xl:text-8xl">
                 {slides[index].title}
               </h1>
-              <p className="mt-5 text-lg text-white/80">{slides[index].subtitle}</p>
+              <p className="mt-6 text-lg text-white/80 md:text-xl">{slides[index].subtitle}</p>
             </motion.div>
           </AnimatePresence>
 

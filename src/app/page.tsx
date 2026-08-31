@@ -7,6 +7,7 @@ import ServiceCard from "@/components/ServiceCard";
 import ClientsMarquee from "@/components/ClientsMarquee";
 import TrustBar from "@/components/TrustBar";
 import AudienceSplit from "@/components/AudienceSplit";
+import InfoTicker from "@/components/InfoTicker";
 import { site } from "@/lib/site";
 import { basePath } from "@/lib/basePath";
 
@@ -75,6 +76,8 @@ export default function Home() {
   return (
     <>
       <HomeHero />
+
+      <InfoTicker />
 
       <TrustBar />
 
