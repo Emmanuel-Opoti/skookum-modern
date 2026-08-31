@@ -19,7 +19,7 @@ export default function ServiceCard({
 }) {
   return (
     <Reveal delay={delay}>
-      <Spotlight className="rounded-2xl">
+      <Spotlight className="rounded-2xl" tilt>
         <Link
           href={href}
           className="group relative block h-80 overflow-hidden rounded-2xl ring-1 ring-white/10 transition-shadow duration-300 hover:ring-gold/40"

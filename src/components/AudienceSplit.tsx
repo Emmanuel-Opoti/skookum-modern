@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "@/components/AppImage";
 import Reveal from "./Reveal";
+import Spotlight from "./Spotlight";
 
 const paths = [
   {
@@ -37,27 +38,29 @@ export default function AudienceSplit() {
       <div className="grid gap-6 md:grid-cols-2">
         {paths.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.1}>
-            <div className="group relative h-[420px] overflow-hidden rounded-2xl ring-1 ring-white/10">
-              <Image
-                src={p.image}
-                alt={p.title}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
-              <div className="absolute inset-x-0 bottom-0 p-8">
-                <h3 className="font-display text-2xl text-white">{p.title}</h3>
-                <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/75">
-                  {p.description}
-                </p>
-                <Link
-                  href={p.href}
-                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-gold/50 px-5 py-2.5 text-sm font-medium text-gold transition-colors hover:bg-gold hover:text-ink"
-                >
-                  {p.cta} <ArrowRight size={15} />
-                </Link>
+            <Spotlight className="rounded-2xl" tilt>
+              <div className="group relative h-[420px] overflow-hidden rounded-2xl ring-1 ring-white/10">
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
+                <div className="absolute inset-x-0 bottom-0 p-8">
+                  <h3 className="font-display text-2xl text-white">{p.title}</h3>
+                  <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/75">
+                    {p.description}
+                  </p>
+                  <Link
+                    href={p.href}
+                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-gold/50 px-5 py-2.5 text-sm font-medium text-gold transition-colors hover:bg-gold hover:text-ink"
+                  >
+                    {p.cta} <ArrowRight size={15} />
+                  </Link>
+                </div>
               </div>
-            </div>
+            </Spotlight>
           </Reveal>
         ))}
       </div>

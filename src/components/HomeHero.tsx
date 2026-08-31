@@ -110,6 +110,24 @@ export default function HomeHero() {
           />
         ))}
       </div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4 }}
+        className="absolute bottom-8 right-6 z-10 hidden flex-col items-center gap-2 md:right-12 md:flex"
+      >
+        <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/60">
+          Scroll
+        </span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          className="flex h-8 w-5 items-start justify-center rounded-full border border-white/30 p-1"
+        >
+          <span className="h-1.5 w-1 rounded-full bg-gold" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

@@ -8,6 +8,8 @@ import ClientsMarquee from "@/components/ClientsMarquee";
 import TrustBar from "@/components/TrustBar";
 import AudienceSplit from "@/components/AudienceSplit";
 import InfoTicker from "@/components/InfoTicker";
+import StatsSection from "@/components/StatsSection";
+import Spotlight from "@/components/Spotlight";
 import { site } from "@/lib/site";
 import { basePath } from "@/lib/basePath";
 
@@ -116,6 +118,8 @@ export default function Home() {
         </Reveal>
       </section>
 
+      <StatsSection />
+
       {/* Services */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-8">
         <Reveal className="mb-12 text-center">
@@ -145,18 +149,20 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((g, i) => (
               <Reveal key={g.src} delay={i * 0.06}>
-                <div className="group relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-white/10">
-                  <Image
-                    src={g.src}
-                    alt={g.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent" />
-                  <p className="absolute bottom-4 left-4 font-display text-sm text-white">
-                    {g.title}
-                  </p>
-                </div>
+                <Spotlight className="rounded-xl" tilt>
+                  <div className="group relative aspect-[4/3] overflow-hidden rounded-xl ring-1 ring-white/10">
+                    <Image
+                      src={g.src}
+                      alt={g.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-transparent" />
+                    <p className="absolute bottom-4 left-4 font-display text-sm text-white">
+                      {g.title}
+                    </p>
+                  </div>
+                </Spotlight>
               </Reveal>
             ))}
           </div>
@@ -236,8 +242,14 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-black py-24">
+      <section className="relative overflow-hidden bg-black py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(208,173,85,0.12),transparent_60%)]" />
+        <p
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none whitespace-nowrap text-center font-display text-[18vw] font-bold leading-none text-white/[0.03]"
+        >
+          SKOOKUM
+        </p>
         <div className="relative mx-auto max-w-3xl px-6 text-center md:px-8">
           <Reveal>
             <h2 className="font-display text-3xl text-white sm:text-4xl">
