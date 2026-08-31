@@ -47,6 +47,8 @@ const gallery = [
   { src: "/images/gallery/wooden-blinds.jpg", title: "Wooden Venetian Blinds" },
   { src: "/images/gallery/solar-blinds.jpg", title: "Solar Control Blinds" },
   { src: "/images/gallery/roman-blinds.jpg", title: "Roman Blinds" },
+  { src: "/images/gallery/bespoke-wallpapers.webp", title: "Bespoke Wallpapers" },
+  { src: "/images/gallery/outdoor-solutions.webp", title: "Outdoor Solutions" },
 ];
 
 const steps = [
