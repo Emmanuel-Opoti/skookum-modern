@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { ArrowRight, Eye, Flame, ShieldCheck, Sun } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import FeatureGrid from "@/components/FeatureGrid";

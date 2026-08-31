@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "@/components/AppImage";
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";

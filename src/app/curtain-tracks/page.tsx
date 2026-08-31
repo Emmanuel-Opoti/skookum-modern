@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import ProductFeature, { type ProductItem } from "@/components/ProductFeature";

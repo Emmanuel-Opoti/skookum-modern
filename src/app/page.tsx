@@ -1,5 +1,5 @@
 import Image from "@/components/AppImage";
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { CalendarCheck, ClipboardList, Hammer, PenTool, ArrowRight } from "lucide-react";
 import HomeHero from "@/components/HomeHero";
 import Reveal from "@/components/Reveal";

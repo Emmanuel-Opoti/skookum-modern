@@ -1,5 +1,5 @@
 import Image from "@/components/AppImage";
-import Link from "next/link";
+import Link from "@/components/AppLink";
 import { ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 
