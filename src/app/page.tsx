@@ -12,6 +12,17 @@ import StatsSection from "@/components/StatsSection";
 import Spotlight from "@/components/Spotlight";
 import { site } from "@/lib/site";
 import { basePath } from "@/lib/basePath";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Window Treatments Nairobi | Blinds, Films & Curtain Tracks",
+  },
+  description:
+    "Custom window treatments in Nairobi, including blinds, decorative and solar-control films, and curtain tracks for homes and offices. Free site visits and quotes.",
+};
+
 
 const services = [
   {
