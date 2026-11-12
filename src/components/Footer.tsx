@@ -1,7 +1,7 @@
 import Link from "@/components/AppLink";
 import Image from "@/components/AppImage";
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import { FacebookIcon, InstagramIcon } from "./SocialIcons";
+import { Mail, MapPin, Phone } from "lucide-react";
+import { FacebookIcon, InstagramIcon, LinkedInIcon } from "./SocialIcons";
 import { navLinks, site } from "@/lib/site";
 
 export default function Footer() {
