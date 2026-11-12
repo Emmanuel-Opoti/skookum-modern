@@ -15,13 +15,34 @@ import { basePath } from "@/lib/basePath";
 import type { Metadata } from "next";
 
 
+
 export const metadata: Metadata = {
   title: {
     absolute: "Window Treatments Nairobi | Blinds, Films & Curtain Tracks",
   },
   description:
     "Custom window treatments in Nairobi, including blinds, decorative and solar-control films, and curtain tracks for homes and offices. Free site visits and quotes.",
+
+  openGraph: {
+    title: "Window Treatments Nairobi | Blinds, Films & Curtain Tracks",
+    description:
+      "Custom window treatments in Nairobi, including blinds, decorative and solar-control films, and curtain tracks for homes and offices. Free site visits and quotes.",
+    url: "https://skookuminteriorcompany.co.ke/",
+    siteName: "Skookum Investments Ltd",
+    images: ["/images/logo.jpg"],
+    type: "website",
+    locale: "en_KE",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Window Treatments Nairobi | Blinds, Films & Curtain Tracks",
+    description:
+      "Custom window treatments in Nairobi, including blinds, decorative and solar-control films, and curtain tracks for homes and offices. Free site visits and quotes.",
+    images: ["/images/logo.jpg"],
+  },
 };
+
 
 
 const services = [
