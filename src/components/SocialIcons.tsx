@@ -34,6 +34,7 @@ export function WhatsAppIcon({ size = 22 }: { size?: number }) {
 }
 
 
+
 export function LinkedInIcon({ size = 16 }: { size?: number }) {
   return (
     <svg
