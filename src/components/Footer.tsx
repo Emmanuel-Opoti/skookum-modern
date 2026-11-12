@@ -1,7 +1,7 @@
 import Link from "@/components/AppLink";
 import Image from "@/components/AppImage";
-import { Mail, MapPin, Phone } from "lucide-react";
-import { FacebookIcon, InstagramIcon, TwitterIcon } from "./SocialIcons";
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { FacebookIcon, InstagramIcon } from "./SocialIcons";
 import { navLinks, site } from "@/lib/site";
 
 export default function Footer() {
@@ -26,18 +26,38 @@ export default function Footer() {
               Bespoke window blinds, films, and motorized curtain tracks for
               homes and businesses across Nairobi since 2015.
             </p>
-            <div className="mt-5 flex gap-3">
-              {[FacebookIcon, TwitterIcon, InstagramIcon].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social link"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-gold transition-colors hover:border-gold hover:bg-gold/10"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div>
+           
+<div className="mt-5 flex gap-3">
+  {[
+    {
+      Icon: FacebookIcon,
+      href: "https://www.facebook.com/p/Skookum-Investments-Limited-100077662582723/",
+      label: "Visit Skookum on Facebook",
+    },
+    {
+      Icon: InstagramIcon,
+      href: "https://www.instagram.com/skookumblindsandfilm/",
+      label: "Visit Skookum on Instagram",
+    },
+    {
+      Icon: Linkedin,
+      href: "https://www.linkedin.com/in/skookum-investments-190035284/",
+      label: "Visit Skookum on LinkedIn",
+    },
+  ].map(({ Icon, href, label }) => (
+    <a
+      key={href}
+      href={href}
+      aria-label={label}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-gold transition-colors hover:border-gold hover:bg-gold/10"
+    >
+      <Icon size={16} />
+    </a>
+  ))}
+</div>
+
           </div>
 
           <div>
