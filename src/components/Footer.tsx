@@ -40,7 +40,7 @@ export default function Footer() {
       label: "Visit Skookum on Instagram",
     },
     {
-      Icon: Linkedin,
+      Icon: LinkedInIcon,
       href: "https://www.linkedin.com/in/skookum-investments-190035284/",
       label: "Visit Skookum on LinkedIn",
     },
