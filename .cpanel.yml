@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home3/skookumi/public_html/
+    - /bin/cp -Rf . $DEPLOYPATH
+    - /bin/rm -rf $DEPLOYPATH.git $DEPLOYPATH.cpanel.yml
