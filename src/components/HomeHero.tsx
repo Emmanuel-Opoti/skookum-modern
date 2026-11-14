@@ -62,23 +62,31 @@ export default function HomeHero() {
 
       <div className="relative z-10 flex h-full items-center px-6 md:px-12">
         <div className="max-w-3xl">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-gold">
-                Nairobi &middot; Since 2015
-              </p>
-              <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl xl:text-8xl">
-                {slides[index].title}
-              </h1>
-              <p className="mt-6 text-lg text-white/80 md:text-xl">{slides[index].subtitle}</p>
-            </motion.div>
-          </AnimatePresence>
+         
+<p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-gold">
+  Nairobi &middot; Since 2015
+</p>
+
+<h1 className="font-display text-5xl leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl xl:text-8xl">
+  Custom Window Treatments in Nairobi
+</h1>
+
+<AnimatePresence mode="wait">
+  <motion.div
+    key={index}
+    initial={{ opacity: 0, y: 24 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -16 }}
+    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+  >
+    <p className="mt-6 text-2xl font-display text-white sm:text-3xl">
+      {slides[index].title}
+    </p>
+    <p className="mt-2 text-lg text-white/80 md:text-xl">
+      {slides[index].subtitle}
+    </p>
+  </motion.div>
+</AnimatePresence>
 
           <div className="mt-9 flex flex-wrap gap-4">
             <Link
