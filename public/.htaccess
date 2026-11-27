@@ -1,5 +1,31 @@
 # Security hardening: block hidden files/folders and sensitive file types
 RewriteEngine On
+
+# --------------------------------------------------
+# SEO - CANONICAL DOMAIN
+# Force www to non-www
+# --------------------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.skookuminteriorcompany\.co\.ke$ [NC]
+RewriteRule ^ https://skookuminteriorcompany.co.ke%{REQUEST_URI} [R=301,L,NE]
+
+# --------------------------------------------------
+# SEO - LEGACY URL REDIRECTS
+# --------------------------------------------------
+
+# Duplicate homepage
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Old service URLs
+RewriteRule ^windowFilms\.html$ /window-films/ [R=301,L,NC]
+RewriteRule ^windowBlinds\.html$ /window-blinds/ [R=301,L,NC]
+RewriteRule ^CurtainTracks\.html$ /curtain-tracks/ [R=301,L,NC]
+RewriteRule ^specializedWindowTreatment\.html$ /specialized-treatments/ [R=301,L,NC]
+RewriteRule ^contact\.html$ /contact/ [R=301,L,NC]
+
+# --------------------------------------------------
+# SECURITY
+# --------------------------------------------------
+
 RewriteRule ^(.*/)?\.git/ - [F,L,NC]
 
 <FilesMatch "^\.">

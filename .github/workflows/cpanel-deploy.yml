@@ -30,14 +30,26 @@ jobs:
       - name: Add cPanel deployment file
         run: cp .cpanel.yml out/.cpanel.yml
 
-      - name: Push build output to cpanel-deploy branch
+
+      - name: Checkout existing deployment branch
+        uses: actions/checkout@v4
+        with:
+          ref: cpanel-deploy
+          path: deployment
+
+      - name: Update deployment branch
         run: |
-          cd out
-          git init -q
-          git checkout -b cpanel-deploy
+          rsync -a --delete --exclude='.git/' out/ deployment/
+
+          cd deployment
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add -A
-          git commit -q -m "Deploy build from ${{ github.sha }}"
-          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-          git push origin cpanel-deploy --force
+
+          if git diff --cached --quiet; then
+            echo "No deployment changes detected"
+          else
+            git commit -m "Deploy build from ${{ github.sha }}"
+            git push origin HEAD:cpanel-deploy
+          fi
